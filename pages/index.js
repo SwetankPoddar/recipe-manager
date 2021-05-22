@@ -19,7 +19,7 @@ export default function Home({recipes}) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var data = await getIndexRecipeInfo();
   var recipes = data.map(recipe => {
     return {

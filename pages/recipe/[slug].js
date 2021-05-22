@@ -1,6 +1,8 @@
 import { getAllRecipeSlugs, getRecipeData } from '../../lib/recipes'
-import Image from 'next/image'
+
 import Head from 'next/head'
+
+import ImageWithFallback from '../../components/ImageWithFallBack'
 
 export default function Recipe({recipeData}){
     return (
@@ -19,14 +21,14 @@ export default function Recipe({recipeData}){
 
 function ingridients(ingridients) {
     const renderedIngridients = ingridients.map((ingridient, index) => {
-        const imageUrl = ingridient.item.image_slug ? `/images/item/${ingridient.item.image_slug}` : `https://www.themealdb.com/images/ingredients/${ingridient.item.name}-small.png`
+        const imageUrl = ingridient.item.image_slug ? `/images/item/${ingridient.item.image_slug}` : `https://www.themealdb.com/images/ingredients/${ingridient.item.name}.png`
         return (
-            <div className="rounded" key={"ingridient-" + index}>
-                <div className="flex items-center justify-center p-5 border-b">
-                    <Image className="rounded" src={imageUrl} width={200} height={200} />
+            <div className="rounded  p-5 border-b" key={"ingridient-" + index}>
+                <div className="flex items-center justify-center">
+                    <ImageWithFallback key={ingridient.item.id} className="rounded" src={imageUrl} fallbackSrc='/images/item/default.jpg' width={200} height={200} />
                 </div>
                 <div className="flex items-center justify-center text-black text-2xl font-extrabold pt-1">
-                    {ingridient.item.name}
+                    {ingridient.item.name.charAt(0).toUpperCase() + ingridient.item.name.slice(1)}
                 </div>
                 <div className="flex items-center justify-center text-black text-2xl pb-3">
                     {ingridient.quantity}
@@ -59,7 +61,7 @@ function directions(directions){
 }
 
 
-export async function getStaticPaths() {
+export async function getServerSidePaths() {
     const paths = await getAllRecipeSlugs()
     return {
         paths,
@@ -67,7 +69,7 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({params}){
+export async function getServerSideProps({params}){
     const recipeData = await getRecipeData(params.slug)
     return {
         props: {
