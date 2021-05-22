@@ -19,11 +19,11 @@ export default function Recipe({recipeData}){
 
 function ingridients(ingridients) {
     const renderedIngridients = ingridients.map((ingridient, index) => {
-        const imageUrl = ingridient.item.image_slug ? ingridient.item.image_slug : 'default.jpg'
+        const imageUrl = ingridient.item.image_slug ? `/images/item/${ingridient.item.image_slug}` : `https://www.themealdb.com/images/ingredients/${ingridient.item.name}-small.png`
         return (
             <div className="rounded" key={"ingridient-" + index}>
                 <div className="flex items-center justify-center p-5 border-b">
-                    <Image className="rounded" src={'/images/item/' + imageUrl} width={200} height={200} />
+                    <Image className="rounded" src={imageUrl} width={200} height={200} />
                 </div>
                 <div className="flex items-center justify-center text-black text-2xl font-extrabold pt-1">
                     {ingridient.item.name}
