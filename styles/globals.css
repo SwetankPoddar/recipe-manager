@@ -1,16 +1,51 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply p-12 bg-purple-700;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.ingridient-item-container {
+  @apply rounded-md;
 }
 
-* {
-  box-sizing: border-box;
+.ingridient-item-image {
+  @apply flex items-center justify-center p-5 border-b;
+}
+
+.ingridient-item-image img {
+  @apply rounded-md;
+}
+.ingridient-item-name {
+  @apply flex items-center justify-center text-black text-2xl font-extrabold pt-1;
+}
+
+.ingridient-item-quantity {
+  @apply flex items-center justify-center text-black text-2xl pb-3;
+}
+
+.ingridients-holder {
+  @apply grid lg:grid-cols-6 gap-4 sm:grid-cols-2;
+}
+
+.ingridients-box { 
+  @apply p-5 shadow-2xl bg-white;
+}
+
+.ingridients-box h2 {
+  @apply text-center font-semibold text-4xl border-b pb-5 mb-3;
+}
+
+.btn {
+  @apply text-base font-medium rounded-lg p-3;
+}
+
+.btn--primary {
+  @apply bg-purple-700 text-white;
 }
