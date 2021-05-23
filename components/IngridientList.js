@@ -24,10 +24,10 @@ export default function IngridientList({ingridients}) {
     })
 
     return (
-        <div className="p-5 shadow-2xl bg-white">
-            <div className={"grid grid-cols-5 " + (showItems ? 'border-b pb-5 mb-3' : '')}>
+        <div className="p-5 shadow-2xl bg-white relative">
+            <div className={showItems ? 'border-b pb-5 mb-3' : ''}>
                 <p className="text-center font-semibold text-2xl col-span-4">Ingredients</p>
-                <button className="btn btn--primary" onClick={onClickAction}>{showItems ? 'Hide' : 'Show'}</button>
+                <button className="btn btn--primary absolute top-2 left-0" onClick={onClickAction}>{showItems ? 'Hide' : 'Show'}</button>
             </div>
             <div className={"flex flex-wrap justify-center " + (showItems ? '' : 'hidden')}>
                 {renderedIngridients}

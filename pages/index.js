@@ -9,7 +9,7 @@ export default function Home({recipes}) {
   }) 
   
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col py-2">
       <Head>
         <title>Recipes by Poddar family</title>
         <link rel="icon" href="/favicon.ico" />
@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
       name: recipe.data.name,
       description: recipe.data.description,
       time: recipe.data.requiredTime,
-      image: '/images/recipe/' + (recipe.data.image ? recipe.data.image : 'default.jpg'),
+      image: '/images/recipe/' + (recipe.data.image ? recipe.data.image : 'default.svg'),
       author: recipe.data.author ? recipe.data.author : 'Swetank Poddar'
     }
   })
