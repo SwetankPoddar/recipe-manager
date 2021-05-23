@@ -3,10 +3,9 @@
 @tailwind utilities;
 
 
-:root {
-  
+button:focus {
+  outline: 0 !important;
 }
-
 body {
   @apply p-12 bg-purple-700;
 }

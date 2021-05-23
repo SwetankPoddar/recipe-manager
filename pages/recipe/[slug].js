@@ -11,7 +11,6 @@ export default function Recipe({recipeData}){
             <Head>
                 <title>Recipie for {recipeData.name}</title>
             </Head>
-            
             <RecipeDetailView recipe={recipeData} />
         </>
     )

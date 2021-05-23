@@ -9,13 +9,15 @@ export default function Home({recipes}) {
   }) 
   
   return (
-    <div className="flex flex-col py-2">
+    <>
       <Head>
-        <title>Recipes by Poddar family</title>
-        <link rel="icon" href="/favicon.ico" />
+          <title>Recipes by Poddar family</title>
+          <link rel="icon" href="/favicon.ico" />
       </Head>
-      <List recipes={allRecipies}></List>
-    </div>
+      <div className="flex flex-col py-2">
+        <List recipes={allRecipies}></List>
+      </div>
+    </>
   )
 }
 

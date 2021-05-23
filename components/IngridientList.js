@@ -27,7 +27,7 @@ export default function IngridientList({ingridients}) {
         <div className="p-5 shadow-2xl bg-white relative">
             <div className={showItems ? 'border-b pb-5 mb-3' : ''}>
                 <p className="text-center font-semibold text-2xl col-span-4">Ingredients</p>
-                <button className="btn btn--primary absolute top-2 left-0" onClick={onClickAction}>{showItems ? 'Hide' : 'Show'}</button>
+                <button className="btn btn--primary absolute top-2 sm:left-1" onClick={onClickAction}>{showItems ? 'Hide' : 'Show'}</button>
             </div>
             <div className={"flex flex-wrap justify-center " + (showItems ? '' : 'hidden')}>
                 {renderedIngridients}
