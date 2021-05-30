@@ -11,11 +11,11 @@ export default function DirectionList({directions}){
                 <p className="text-center font-semibold text-2xl col-span-4">Directions</p>
                 <button className="btn btn--primary  absolute top-2 sm:left-1" onClick={onClickAction}>{showItems ? 'Hide' : 'Show'}</button>
             </div>
-            <ul className={"text-left space-y-2 divide-y divide-grey-500 " + (showItems ? '' : 'hidden')}>
+            <div className={"text-left space-y-2 divide-y divide-grey-500 " + (showItems ? '' : 'hidden')}>
                 {directions.map((direction, index) => {
-                    return <li key={"direction-" + index} className="p-5">{direction.description}</li>
+                    return <div key={"direction-" + index} className="p-5 border-black-900">{direction.description}</div>
                 })}
-            </ul>
+            </div>
         </div>
     )
 }
