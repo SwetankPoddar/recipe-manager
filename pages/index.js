@@ -14,9 +14,10 @@ export default function Home({recipes}) {
           <title>Recipes by Poddar family</title>
           <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col py-2">
-        <List recipes={allRecipies}></List>
+      <div className="bg-white mb-6 text-center p-5 font-bold text-3xl">
+          Recipes by Poddar Family
       </div>
+      <List recipes={allRecipies}></List>
     </>
   )
 }

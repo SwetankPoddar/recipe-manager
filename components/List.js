@@ -1,7 +1,14 @@
 export default function List({ recipes }) {
     return (
-      <ul className="divide-y space-y-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {recipes}
-      </ul>
+        {recipes}
+        {recipes}
+        {recipes}
+        {recipes}
+        {recipes}
+        {recipes}
+        {recipes}
+      </div>
     )
   }
